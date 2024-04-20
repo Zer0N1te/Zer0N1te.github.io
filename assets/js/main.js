@@ -68,13 +68,16 @@ cross.addEventListener('click', () => {
 
 var cart = document.querySelector('.cart')
 var cartMenu = document.querySelector('.cart-menu')
+var backDrop = document.querySelector('.backdrop')
 
 cart.addEventListener('click', () => {
   cart.classList.toggle('active')
   cartMenu.classList.toggle('active')
+  backDrop.classList.toggle('active')
 });
 
 cross2.addEventListener('click', () => {
   cart.classList.remove('active');
   cartMenu.classList.remove('active');
+  backDrop.classList.remove('active');
 });
