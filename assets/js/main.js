@@ -57,8 +57,8 @@ burger.addEventListener('click', () => {
   // }
   console.log(burger);
   console.log(mobileMenu);
-  burger.classList.toggle('active')
-  mobileMenu.classList.toggle('active')
+  burger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
 });
 
 cross.addEventListener('click', () => {
@@ -67,17 +67,33 @@ cross.addEventListener('click', () => {
 });
 
 var cart = document.querySelector('.cart')
-var cartMenu = document.querySelector('.cart-menu')
-var backDrop = document.querySelector('.backdrop')
+var cartMenu = document.querySelector('.cart-menu');
+var backDrop = document.querySelector('.backdrop');
 
 cart.addEventListener('click', () => {
-  cart.classList.toggle('active')
-  cartMenu.classList.toggle('active')
-  backDrop.classList.toggle('active')
+  cart.classList.toggle('active');
+  cartMenu.classList.toggle('active');
+  backDrop.classList.toggle('active');
 });
 
 cross2.addEventListener('click', () => {
   cart.classList.remove('active');
   cartMenu.classList.remove('active');
   backDrop.classList.remove('active');
+});
+
+var products = document.querySelectorAll('.card__button');
+
+products.forEach((product) => {
+  product.addEventListener("click", () => {
+    let title = document.querySelector('.card__title').innerHTML;
+    let price = document.querySelector('.card__price').innerHTML;
+
+    let products_area = document.querySelector('.cart-menu__products');
+
+    let div = document.createElement('div');
+    div.className = 'product-info';
+    div.innerHTML = `<span class='product-title'>${title}</span> <span class='product-price'>${price}</span>`;
+    products_area.append(div);
+  });
 });
