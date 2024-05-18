@@ -756,12 +756,13 @@ body {
 }
 
 .cart-menu__products {
-    height: 100px;
+    height: 200px;
+    overflow: auto;
 }
 
 .cart-menu__btn {
     display: flex;
-    position: absolute;
+    position: relative;
     right: 10px;
     top: 154px;
     cursor: pointer;
